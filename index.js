@@ -4,8 +4,8 @@ import axios from "axios";
 const app = express();
 app.use(express.json());
 
-const LINE_TOKEN = "ここにアクセストークン";
-const OPENAI_KEY = "ここにOpenAIキー";
+const LINE_TOKEN = process.env.LINE_TOKEN;
+const OPENAI_KEY = process.env.OPENAI_KEY;
 
 app.post("/webhook", async (req, res) => {
   const events = req.body.events;
